@@ -1,48 +1,27 @@
 import React from 'react';
-import { Award, Trophy, Briefcase, GraduationCap, Medal, Star } from 'lucide-react';
+import { PenTool, Briefcase, Rocket } from 'lucide-react';
 
 const achievements = [
   {
-    year: '2023',
-    title: 'Innovation Award',
-    description: 'Recognized for pioneering breakthrough technology in AI-assisted design systems.',
-    icon: <Award size={18} />,
-    highlight: true,
-  },
-  {
-    year: '2022',
-    title: 'Published Research Paper',
-    description: 'Research on emerging interface paradigms published in prestigious journal.',
-    icon: <Star size={18} />,
-    highlight: false,
-  },
-  {
-    year: '2021',
-    title: 'Tech Leadership Award',
-    description: 'Led cross-functional team to successful completion of major industry project.',
-    icon: <Trophy size={18} />,
+    year: '2025',
+    title: 'First App Launch',
+    description: 'Successfully launched my first mobile application, marking a significant milestone in my development journey.',
+    icon: <Rocket size={18} />,
     highlight: true,
   },
   {
     year: '2020',
-    title: 'Senior Developer Role',
-    description: 'Promoted to lead technical initiatives and mentor junior developers.',
+    title: 'Started Freelancing',
+    description: 'Began my freelance career, working with diverse clients and expanding my professional network.',
     icon: <Briefcase size={18} />,
     highlight: false,
   },
   {
-    year: '2019',
-    title: 'Master\'s Degree',
-    description: 'Completed advanced studies in Computer Science with honors.',
-    icon: <GraduationCap size={18} />,
-    highlight: true,
-  },
-  {
     year: '2018',
-    title: 'Industry Recognition',
-    description: 'Selected as one of the "30 Under 30" innovators in technology.',
-    icon: <Medal size={18} />,
-    highlight: false,
+    title: 'Started Blogging',
+    description: 'Launched my blogging journey, sharing insights and knowledge with the community.',
+    icon: <PenTool size={18} />,
+    highlight: true,
   },
 ];
 
@@ -61,11 +40,11 @@ const AchievementsSection = () => {
             </span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto animate-on-scroll">
-            Milestones and recognitions that mark my journey of continuous growth and contribution.
+            Key milestones that mark my journey of growth and professional development.
           </p>
         </div>
         
-        <div className="relative">
+        <div className="relative max-w-3xl mx-auto">
           {/* Timeline line */}
           <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gray-800 transform -translate-x-1/2"></div>
           
@@ -88,14 +67,14 @@ const AchievementsSection = () => {
                     `}
                   >
                     <div className="flex items-center justify-end mb-3">
-                      <span className="text-sm font-mono bg-gray-800 px-2 py-0.5 rounded text-gray-400">
+                      <span className="text-sm font-mono bg-gray-800 px-3 py-1 rounded text-gray-400">
                         {achievement.year}
                       </span>
                     </div>
                     <h3 className={`text-xl font-semibold mb-2 ${achievement.highlight ? 'text-indigo-300' : 'text-white'}`}>
                       {achievement.title}
                     </h3>
-                    <p className="text-gray-400 text-sm">
+                    <p className="text-gray-400 text-sm leading-relaxed">
                       {achievement.description}
                     </p>
                   </div>
@@ -129,14 +108,14 @@ const AchievementsSection = () => {
                     `}
                   >
                     <div className="flex items-center mb-3">
-                      <span className="text-sm font-mono bg-gray-800 px-2 py-0.5 rounded text-gray-400">
+                      <span className="text-sm font-mono bg-gray-800 px-3 py-1 rounded text-gray-400">
                         {achievement.year}
                       </span>
                     </div>
                     <h3 className={`text-xl font-semibold mb-2 ${achievement.highlight ? 'text-indigo-300' : 'text-white'}`}>
                       {achievement.title}
                     </h3>
-                    <p className="text-gray-400 text-sm">
+                    <p className="text-gray-400 text-sm leading-relaxed">
                       {achievement.description}
                     </p>
                   </div>
@@ -176,7 +155,7 @@ const AchievementsSection = () => {
                       <h3 className={`text-lg font-semibold mb-1 ${achievement.highlight ? 'text-indigo-300' : 'text-white'}`}>
                         {achievement.title}
                       </h3>
-                      <p className="text-gray-400 text-xs">
+                      <p className="text-gray-400 text-sm leading-relaxed">
                         {achievement.description}
                       </p>
                     </div>

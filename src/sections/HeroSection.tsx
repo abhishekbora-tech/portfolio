@@ -1,5 +1,44 @@
 import React, { useEffect, useRef } from 'react';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, Instagram, Linkedin, Twitter, Send, MessageCircle, HelpCircle } from 'lucide-react';
+
+const socialLinks = [
+  {
+    name: 'Instagram',
+    url: 'https://www.instagram.com/abhishekbora.off/',
+    icon: <Instagram size={20} />,
+    color: 'from-pink-500 to-purple-500'
+  },
+  {
+    name: 'LinkedIn',
+    url: 'https://www.linkedin.com/in/bora-abhishek/',
+    icon: <Linkedin size={20} />,
+    color: 'from-blue-600 to-blue-400'
+  },
+  {
+    name: 'Twitter',
+    url: 'https://x.com/beingAbhishekz',
+    icon: <Twitter size={20} />,
+    color: 'from-blue-400 to-blue-300'
+  },
+  {
+    name: 'Telegram',
+    url: 'https://t.me/AbhishekBora1',
+    icon: <Send size={20} />,
+    color: 'from-blue-500 to-cyan-400'
+  },
+  {
+    name: 'Quora',
+    url: 'https://www.quora.com/profile/Abhishek-Bora-50',
+    icon: <HelpCircle size={20} />,
+    color: 'from-red-500 to-orange-400'
+  },
+  {
+    name: 'YouTube',
+    url: 'https://www.youtube.com/@AbhishekBoraOfficial',
+    icon: <MessageCircle size={20} />,
+    color: 'from-red-600 to-red-400'
+  }
+];
 
 const HeroSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -39,10 +78,39 @@ const HeroSection = () => {
             Driven by curiosity and a passion for innovation.
           </p>
           
+          {/* Social Links */}
+          <div className="flex flex-wrap justify-center gap-4 mb-10 animate-fade-in delay-500">
+            {socialLinks.map((social, index) => (
+              <a
+                key={social.name}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`
+                  group relative p-3 rounded-full bg-gray-800/50 border border-gray-700 
+                  hover:border-transparent transition-all duration-300 backdrop-blur-sm
+                  hover:shadow-lg hover:scale-110
+                `}
+                style={{ animationDelay: `${600 + index * 100}ms` }}
+                aria-label={social.name}
+              >
+                <div className={`absolute inset-0 rounded-full bg-gradient-to-r ${social.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
+                <div className="relative z-10 text-gray-300 group-hover:text-white transition-colors duration-300">
+                  {social.icon}
+                </div>
+                <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                  <span className="text-xs text-gray-400 bg-gray-900 px-2 py-1 rounded whitespace-nowrap">
+                    {social.name}
+                  </span>
+                </div>
+              </a>
+            ))}
+          </div>
+          
           <div className="animate-fade-in delay-500">
             <a 
               href="#skills" 
-              className="px-8 py-3 rounded-full bg-indigo-600/20 border border-indigo-500/50 text-indigo-300 hover:bg-indigo-600/30 transition-all duration-300 shadow-lg shadow-indigo-600/10 backdrop-blur-sm group"
+              className="px-8 py-3 rounded-full bg-indigo-600/20 border border-indigo-500/50 text-indigo-300 hover:bg-indigo-600/30 transition-all duration-300 shadow-lg shadow-indigo-600/10 backdrop-blur-sm group mt-4"
             >
               Discover My World
               <span className="ml-2 inline-block transition-transform group-hover:translate-y-1">
